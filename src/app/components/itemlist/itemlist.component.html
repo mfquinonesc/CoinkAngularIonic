@@ -1,0 +1,5 @@
+<div (click)="hide()" [ngClass]="isDisable?'disabled':''">
+  <ul>
+    <li *ngFor="let item of itemArray" (click)="selectItem(item)">{{item.description}}</li>
+  </ul>
+</div>

@@ -1,0 +1,8 @@
+<div [ngClass]="isDisable?'disabled':''">
+  <ion-datetime #dateBirth displayFormat="DD/MM/YYYY" presentation="date" (ionChange)="pickDate($event)">
+    <ion-buttons slot="buttons">
+      <ion-button color="primary" (click)="cancel(dateBirth)">Cancelar</ion-button>
+      <ion-button color="primary" (click)="confirm(dateBirth)">Aceptar</ion-button>
+    </ion-buttons>
+  </ion-datetime>
+</div>

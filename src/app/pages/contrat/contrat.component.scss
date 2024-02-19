@@ -1,0 +1,62 @@
+.div-contrat {
+    margin: 0 5vw;
+}
+
+.div-contrat h3 {
+    font-weight: 600;
+    color: #004b40;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+.div-contrat p {
+    font-size: 0.9em;
+    color: #2e2e2ed4;
+    margin-bottom: 1em;
+}
+
+.form-group {
+    margin: 0 5vw;
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+}
+
+.form-group a {
+    margin: 4vh 0 2vh 0;
+    color: #004b40;
+    font-weight: 600;
+}
+
+.form-group label {
+    color: #004b40;
+}
+
+.form-group input[type="checkbox"] {
+    margin-right: 0.5em;  
+ 
+}
+
+.form-group input[type="checkbox"]:checked {
+  
+}
+
+.form-group button {
+    margin: 5vh 0 5vh 0;
+    padding: 0;
+    border-radius: 100px;
+    background-color: #8080802f;
+    color: #808080d5;
+    height: 7vh;
+    width: 100%;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.btn-active {
+    color: #004b40 !important;
+    background-color: #1eea00 !important;
+}

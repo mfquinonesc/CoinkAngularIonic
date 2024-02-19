@@ -1,0 +1,53 @@
+<ion-header>
+  <div class="div-header">
+    <ul>
+      <li class="arrow"><a routerLink="/account"><i class="fa-solid fa-chevron-left"></i></a></li>
+      <li class="title">FINALIZAR</li>
+      <li>&nbsp;</li>
+    </ul>
+    <ul class="steps">
+      <li><a class="fill"></a></li>
+      <li><a class="fill"></a></li>
+      <li><a class="fill"></a></li>
+    </ul>
+  </div>
+</ion-header>
+<ion-content>
+  <div class="div-inst">
+    <img src="../../../assets/images/coink.png" alt="logo">
+    <div>
+      <h2>ESTAS MUY CERCA DE <br> SER PARTE DE COINK.</h2>
+      <p>Solo es necesario que leas <br> detenidamente el contrato que se <br> encuentra al final de esta pantalla y
+        <br> lo aceptas.
+      </p>
+    </div>
+  </div>
+  <div class="div-line">
+    <hr>
+  </div>
+  <div class="div-contrat">
+    <h3>LO MÁS IMPORTANTE</h3>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit ullam aliquam nisi repellat alias
+      voluptatem quia ipsa, ad voluptas eius.</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam impedit nemo exercitationem porro placeat, esse
+      doloribus et fugit atque sed. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam maxime cum harum
+      eligendi, neque cumque architecto consectetur?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptatem omnis repellendus,
+      mollitia magni quam. Lorem ipsum dolor sit amet.
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+  </div>
+  <div class="form-group">
+    <a href="http://localhost/" target="_blank">Lee tu contrato</a>
+  </div>
+  <div class="form-group">
+    <input type="checkbox" [(ngModel)]="isAccepted">
+    <label for="">He leído ya acepto el contrato</label>
+  </div>
+  <form class="form-group" (ngSubmit)="create(loader)">
+    <button id="acceptBtn" [ngClass]="isAccepted?'btn-active':''" type="submit">ACEPTAR</button>
+  </form>
+  <ion-loading #loader trigger="acceptBtn" message="Creando cuenta..."  spinner="circles"></ion-loading>
+</ion-content>
+<ion-footer>
+</ion-footer>

@@ -1,0 +1,84 @@
+.div-number {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.div-number a {
+    width: 90vw;
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #80808011;
+    font-size: 2.2em;
+    text-decoration: none;
+    color: #80808070;
+    border-radius: 10px;
+    box-shadow: 1px 4px #80808022;
+}
+
+.active-number {
+    color: black !important;
+}
+
+.div-keyword {
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-keyword ul {
+    margin: 0;
+    padding: 0 10vw;
+    width: 100vw;
+    height: 12vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div-keyword ul li {
+    list-style-type: none;
+    height: 8vh;
+    width: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    border-radius: 8vh;
+    color: #004b40;
+    font-weight: 600;
+}
+
+.div-keyword ul li:hover {
+    background-color: #80808031;
+}
+
+.btn-ok {
+    color: #cac8c8 !important;
+    background-color: #80808031;
+}
+
+.btn-delete{    
+    background-color: transparent !important;
+}
+
+.active {
+    color: #fff !important;
+    background-color: #1eea00;
+}
+
+.diseable {
+    color: #fff !important;
+    background-color: #80808031;
+}

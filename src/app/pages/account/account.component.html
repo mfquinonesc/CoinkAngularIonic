@@ -1,0 +1,127 @@
+<ion-header>
+  <div class="div-header">
+    <ul>
+      <li class="arrow"><a routerLink="/phone"><i class="fa-solid fa-chevron-left"></i></a></li>
+      <li class="title">DATOS DE CUENTA</li>
+      <li>&nbsp;</li>
+    </ul>
+    <ul class="steps">
+      <li><a class="fill"></a></li>
+      <li><a class="fill"></a></li>
+      <li></li>
+    </ul>
+  </div>
+</ion-header>
+<ion-content>
+  <div class="div-inst">
+    <img src="../../../assets/images/coink.png" alt="logo">
+    <div>
+      <h2>¿CÚALES SON TUS DATOS?</h2>
+      <p>Ahora necesitamos saber <br> algunos datos tuyos.</p>
+    </div>
+  </div>
+  <div class="div-line">
+    <hr>
+  </div>
+  <form [formGroup]="accountForm" class="div-form">
+
+    <h3>Documento de identidad</h3>
+
+    <div class="form-group">
+      <label for="identType" [ngClass]="identTypeFill?'fill':''">Tipo de documento</label>
+      <div class="icon">
+        <input formControlName="identType" type="text" class="form-control" placeholder="Tipo de documento" readonly>
+        <button class="btn-icon" (click)="displayItems()"><i class="fa-solid fa-caret-down"></i></button>
+      </div>
+      <small *ngIf="identType.errors?.['required'] && (identTypeTouched)">Debe seleccionar un tipo de
+        documento</small>
+    </div>
+
+    <div class="form-group">
+      <label for="idNumber" [ngClass]="idNumberFill?'fill':''">Número de documento</label>
+      <input formControlName="idNumber" type="number" class="form-control" placeholder="Número de documento">
+      <small *ngIf="idNumber.errors?.['required'] && (idNumber.dirty || idNumber.touched)">Debe ingresar un número de
+        identificación</small>
+    </div>
+
+    <div class="form-group">
+      <label for="docDate" [ngClass]="docDateFill?'fill':''">Fecha de expedixión del documento</label>
+      <input formControlName="docDate" type="text" class="form-control" placeholder="Fecha de expedixión del documento"
+        readonly (click)="displayDocDate()">
+      <small *ngIf="docDate.touched && docDate.errors?.['required']">Debe ingresar una fecha</small>
+    </div>
+
+    <div class="form-group">
+      <label for="birthDate" [ngClass]="birthDateFill?'fill':''">Fecha de nacimiento</label>
+      <input formControlName="birthDate" type="text" class="form-control" placeholder="Fecha de nacimiento" readonly
+        (click)="displayBirthDate()">
+      <small *ngIf="birthDate.touched && birthDate.errors?.['required']">Debe ingresar una fecha</small>
+      <small *ngIf="birthDate.touched && birthDate.errors?.['pattern']">Debe ingresar una fecha válida</small>
+    </div>
+
+    <div class="form-group">
+      <label for="" [ngClass]="genereFill?'fill':''">Género</label>
+      <div class="icon">
+        <input formControlName="genere" type="text" class="form-control" placeholder="Género" readonly>
+        <button class="btn-icon" (click)="displayGeneres()"><i class="fa-solid fa-caret-down"></i></button>
+      </div>
+      <small *ngIf="genere.errors?.['required'] && (genereTouched)">Debe seleccionar un género</small>
+    </div>
+
+    <h3>Configura tu cuenta</h3>
+
+    <div class="form-group">
+      <label for="email" [ngClass]="emailFill?'fill':''">Correo</label>
+      <input formControlName="email" type="email" class="form-control" placeholder="Correo">
+      <small *ngIf="email.errors?.['required'] && (email.dirty || email.touched)">
+        Debe ingresar un correo.</small>
+      <small *ngIf="email.errors?.['email'] && (email.dirty || email.touched)">
+        Debe ingresar un correo válido.</small>
+    </div>
+
+    <div class="form-group">
+      <label [ngClass]="emailConfirmFill && !emailError?'fill':''" for="emailconfirm">Confirmar correo</label>
+      <label [ngClass]="emailError?'fillError':''">Confirmar correo</label>
+      <div class="icon">
+        <input formControlName="emailConfirm" type="email" class="form-control" placeholder="Confirmar correo">
+        <button class="btn-icon-ok" *ngIf="emailFill && !emailError && !email.errors?.['email']"><i
+            class="fa-solid fa-check"></i></button>
+      </div>
+      <small *ngIf="emailError">Este campo no coincide con el correo</small>
+    </div>
+
+    <div class="form-group">
+      <label for="pin" [ngClass]="pinFill?'fill':''">PIN de segurida</label>
+      <div class="icon">
+        <input id="pin" formControlName="pin" [type]="isPin?'text':'password'" class="form-control"
+          placeholder="PIN de segurida">
+        <button class="btn-icon" (click)="showPin()"><i class="fa-solid fa-eye"></i></button>
+      </div>
+      <small *ngIf="pin.errors?.['required'] && (pin.dirty || pin.touched)">Debe ingresar un PIN válido</small>
+    </div>
+
+    <div class="form-group">
+      <label [ngClass]="pinConfirmFill && !pinError?'fill':''">Confirmar PIN de segurida</label>
+      <label [ngClass]="pinError?'fillError':''">Confirmar PIN de segurida</label>
+      <div class="icon">
+        <input formControlName="pinConfirm" [type]="isPinConfirm?'text':'password'" class="form-control"
+          placeholder="Confirmar PIN de segurida">
+        <button class="btn-icon" (click)="showPinConfirm()"><i class="fa-solid fa-eye"></i></button>
+      </div>
+      <small *ngIf="pinError">Este campo no coincide con el PIN</small>
+    </div>
+
+    <div class="form-group">
+      <div class="div-submit">
+        <button [ngClass]="isValid?'btn-active':''" type="submit" (click)="continue()">SIGUIENTE</button>
+      </div>
+    </div>
+
+  </form>
+  <app-itemlist (idEvent)="setIdType($event)"></app-itemlist>
+  <app-genderlist (genereEvent)="setGenereType($event)"></app-genderlist>
+  <app-docdate (dateEvent)="setDocDate($event)"></app-docdate>
+  <app-birthdate (dateEvent)="setBirthDate($event)"></app-birthdate>
+</ion-content>
+<ion-footer>
+</ion-footer>

@@ -1,0 +1,52 @@
+<ion-header>
+  <div class="div-header">
+    <ul>
+      <li class="arrow"><a routerLink="/login"><i class="fa-solid fa-chevron-left"></i></a></li>
+      <li class="title">NÚMERO CELULAR</li>
+      <li>&nbsp;</li>
+    </ul>
+    <ul class="steps">
+      <li><a class="fill"></a></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</ion-header>
+<ion-content>
+  <div class="div-inst">
+    <img src="../../../assets/images/coink.png" alt="logo">
+    <div>
+      <p>Para empezar, por favor <br> ingresa <span>tu número celular.</span></p>
+    </div>
+  </div>
+  <div class="div-line">
+    <hr>
+  </div>
+  <div class="div-number">
+    <a [ngClass]="isTouched?'active-number':''">{{phoneNumber}}</a>
+  </div>
+  <div class="div-keyword">
+    <ul>
+      <li (click)="click('1')">1</li>
+      <li (click)="click('2')">2</li>
+      <li (click)="click('3')">3</li>
+    </ul>
+    <ul>
+      <li (click)="click('4')">4</li>
+      <li (click)="click('5')">5</li>
+      <li (click)="click('6')">6</li>
+    </ul>
+    <ul>
+      <li (click)="click('7')">7</li>
+      <li (click)="click('8')">8</li>
+      <li (click)="click('9')">9</li>
+    </ul>
+    <ul>
+      <li class="btn-delete" (click)="remove()"><i class="fa-solid fa-delete-left"></i></li>
+      <li (click)="click('0')">0</li>
+      <li [ngClass]="isChecked?'active':'diseable'" (click)="createAccount()">&#x2713;</li>
+    </ul>
+  </div>
+</ion-content>
+<ion-footer>
+</ion-footer>

@@ -1,0 +1,52 @@
+.div-logo {
+    width: 100vw;
+    height: 70vh;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-buttons {
+    width: 100vw;
+    height: 30vh;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 6vh;
+   
+}
+img{
+    width: 35vw;
+    margin-bottom: 2em;
+}
+
+.lema {
+    color: #1eea00;
+    font-weight: 700;
+    font-size: 1.2em;
+    text-align: center;    
+    margin: 0;
+    padding: 0;  
+}
+
+.btn {
+    width: 85vw;
+    border-radius: 100px;   
+    height: 8vh;
+    margin-bottom: 6vw;
+    font-size: 1em;        
+}
+
+.btn-regist {
+    background-color: #1eea00;
+    color: #004b40; 
+    font-weight: 800;     
+}
+
+.btn-login {
+    background-color: #004b40;
+    color: #fff;
+    font-weight: 600;  
+}

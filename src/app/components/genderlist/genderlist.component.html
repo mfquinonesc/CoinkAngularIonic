@@ -1,0 +1,5 @@
+<div (click)="hide()" [ngClass]="isDisable?'disabled':''">
+  <ul>
+    <li *ngFor="let item of genereArray" (click)="selectItem(item)">{{item.notation}}</li>    
+  </ul>
+</div>
