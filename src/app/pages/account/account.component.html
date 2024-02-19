@@ -55,8 +55,7 @@
       <label for="birthDate" [ngClass]="birthDateFill?'fill':''">Fecha de nacimiento</label>
       <input formControlName="birthDate" type="text" class="form-control" placeholder="Fecha de nacimiento" readonly
         (click)="displayBirthDate()">
-      <small *ngIf="birthDate.touched && birthDate.errors?.['required']">Debe ingresar una fecha</small>
-      <small *ngIf="birthDate.touched && birthDate.errors?.['pattern']">Debe ingresar una fecha válida</small>
+      <small *ngIf="birthDate.touched && birthDate.errors?.['required']">Debe ingresar una fecha</small>      
     </div>
 
     <div class="form-group">
