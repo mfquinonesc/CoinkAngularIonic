@@ -84,12 +84,14 @@ Para construir el proyecto y prepararlo para Android, sigue estos pasos:
 
 6. Para ver la ejecución de los datos que el usuario ingresa en la aplicación cuando navega por los diferentes formularios ejecute `ng serve -o` y ver la consola del navegador.  
 
+    ![Flujo de datos](./images/log.png)
 
-Otra opción sería ejecutar el comando (Opcional porque depende de Java)
 
-```
-npx cap run android
-```
+7. Otra opción sería ejecutar el comando (Opcional porque depende de Java)
+
+    ```
+    npx cap run android
+    ```
     
 
    
