@@ -82,11 +82,17 @@ Para construir el proyecto y prepararlo para Android, sigue estos pasos:
     ![Android Studio](./images/apk.png)
 
 
+6. Para ver la ejecución de los datos que el usuario ingresa en la aplicación cuando navega por los diferentes formularios ejecute `ng server -o` y ver la consola del navegador.  
+
+
 Otra opción sería ejecutar el comando (Opcional porque depende de Java)
 
-    ```
-    npx cap run android
-    ```
+```
+npx cap run android
+```
+    
+
+   
 
 ### Capturas de pantallas
 
